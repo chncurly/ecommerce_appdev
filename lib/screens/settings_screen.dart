@@ -10,7 +10,7 @@ class SettingsScreen extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 35, 32, 32),
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        backgroundColor: const Color.fromARGB(255, 232, 41, 28),
+        backgroundColor: const Color.fromARGB(255, 68, 50, 48),
         foregroundColor: Colors.white,
         title: const Text('Profile Settings'),
         actions: [
@@ -46,10 +46,9 @@ class SettingsScreen extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 40),
-
                 Center(
                   child: Image.asset(
-                    'assets/images/pns.png',
+                    'ysl.png',
                     width: 150,
                   ),
                 ),
@@ -98,7 +97,7 @@ class SettingsScreen extends StatelessWidget {
   Widget _buildSettingTile(IconData icon, String title, VoidCallback onTap) {
     return ListTile(
       onTap: onTap,
-      leading: Icon(icon, color: const Color.fromARGB(255, 232, 41, 28)),
+      leading: Icon(icon, color: const Color.fromARGB(255, 129, 110, 108)),
       title: Text(
         title,
         style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w500),

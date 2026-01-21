@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 35, 32, 32),
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: const Color.fromARGB(255, 232, 41, 28),
+        backgroundColor: const Color.fromARGB(255, 59, 48, 47),
         foregroundColor: Colors.white,
         title: const Text('Home'),
         actions: [
@@ -64,13 +64,24 @@ class HomeScreen extends StatelessWidget {
             height: double.infinity,
             decoration: const BoxDecoration(
               image: DecorationImage(      
-                image: AssetImage('ysl3.png'), 
+                image: AssetImage('plain.png'), 
                 fit: BoxFit.cover,
               ),
             ),
           ),
 
-          
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'ysl.png', 
+                  width: 300,
+                ),
+                const SizedBox(height: 20),
+              ],
+            ),
+          ),
         ],
       ),
     );
