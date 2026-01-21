@@ -17,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: const Color.fromARGB(255, 232, 41, 28),
+        backgroundColor: const Color.fromARGB(255, 49, 35, 34),
         foregroundColor: Colors.white,
         title: const Text('My Account'),
         actions: [
@@ -98,7 +98,7 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 15),
                       const Text(
-                        'Joshua Garcia',
+                        'Christian John G. Arnidoval / Gienella G. Dizon',
                         style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       const Text(
@@ -126,6 +126,7 @@ class ProfileScreen extends StatelessWidget {
                       _buildStatusIcon(Icons.local_shipping, "To Ship"),
                       _buildStatusIcon(Icons.inventory_2, "To Receive"),
                       _buildStatusIcon(Icons.rate_review, "To Review"),
+                      _buildStatusIcon(Icons.account_balance, "My Balance"),
                     ],
                   ),
                 ),
@@ -148,7 +149,6 @@ class ProfileScreen extends StatelessWidget {
                        const Divider(color: Colors.white12, height: 1),
                       _buildMenuTile(Icons.card_giftcard, "Vouchers & Promos"),
                        const Divider(color: Colors.white12, height: 1),
-                      _buildMenuTile(Icons.help_center_outlined, "Help Center"),
                     ],
                   ),
                 ),
@@ -161,7 +161,7 @@ class ProfileScreen extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromARGB(255, 232, 41, 28),
+                        backgroundColor: const Color.fromARGB(255, 48, 35, 34),
                         foregroundColor: Colors.white,
                         padding: const EdgeInsets.symmetric(vertical: 15),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -206,7 +206,7 @@ class ProfileScreen extends StatelessWidget {
 
   Widget _buildMenuTile(IconData icon, String title) {
     return ListTile(
-      leading: Icon(icon, color: const Color.fromARGB(255, 232, 41, 28), size: 22),
+      leading: Icon(icon, color: const Color.fromARGB(255, 134, 120, 119), size: 22),
       title: Text(title, style: const TextStyle(color: Colors.white, fontSize: 15)),
       trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white24, size: 14),
       onTap: () {},
