@@ -75,7 +75,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 child: Column(
                   children: [
                     const SizedBox(height: 60),
-                    Image.asset('assets/images/pns.png', width: 140),
+                    Image.asset('ysl.png', width: 140),
                     const Text("Start your journey with us!", style: TextStyle(color: Colors.white54, fontSize: 14)),
                     const SizedBox(height: 40),
 
@@ -92,7 +92,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       child: ElevatedButton(
                         onPressed: _isLoading ? null : handleSignup,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromARGB(255, 232, 41, 28),
+                          backgroundColor: const Color.fromARGB(255, 54, 41, 40),
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(vertical: 18),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
@@ -149,7 +149,7 @@ class _SignupScreenState extends State<SignupScreen> {
         filled: true,
         prefixIcon: Icon(icon, color: Colors.white70),
         enabledBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.white10), borderRadius: BorderRadius.circular(15)),
-        focusedBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.red), borderRadius: BorderRadius.circular(15)),
+        focusedBorder: OutlineInputBorder(borderSide: const BorderSide(color: Color.fromARGB(255, 46, 36, 35)), borderRadius: BorderRadius.circular(15)),
       ),
     );
   }

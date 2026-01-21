@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.transparent,
           content: AwesomeSnackbarContent(
-            title: 'Whoooops!',
+            title: 'Wait!',
             message: 'Something went wrong. Please check your email and password.',
             contentType: ContentType.failure,
           ),
@@ -149,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: ElevatedButton(
                         onPressed: _isLoading ? null : login,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromARGB(255, 3, 3, 3),
+                          backgroundColor: const Color.fromARGB(255, 39, 32, 32),
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(vertical: 18),
                           shape: RoundedRectangleBorder(
