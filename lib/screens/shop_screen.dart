@@ -53,7 +53,10 @@ class ShopScreen extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (_) => const CartScreen()));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const CartScreen()),
+                  );
                 },
                 icon: const Icon(Icons.shopping_bag),
               ),
@@ -66,7 +69,10 @@ class ShopScreen extends StatelessWidget {
                     backgroundColor: Colors.white,
                     child: Text(
                       '${cart.itemCount}',
-                      style: const TextStyle(color: Colors.red, fontSize: 12),
+                      style: const TextStyle(
+                        color: Color.fromARGB(255, 82, 64, 63),
+                        fontSize: 12,
+                      ),
                     ),
                   ),
                 ),
@@ -74,7 +80,10 @@ class ShopScreen extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (_) => const MessageScreen()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const MessageScreen()),
+              );
             },
             icon: const Icon(Icons.message),
           ),
@@ -87,12 +96,12 @@ class ShopScreen extends StatelessWidget {
             height: double.infinity,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: const AssetImage('ysl2.png'), 
-                fit: BoxFit.cover
+                image: const AssetImage('ysl2.png'),
+                fit: BoxFit.cover,
               ),
             ),
           ),
-          
+
           GridView.builder(
             padding: const EdgeInsets.all(12),
             itemCount: products.length,
@@ -137,7 +146,12 @@ class ShopScreen extends StatelessWidget {
                         width: double.infinity,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color.fromARGB(255, 51, 48, 48),
+                            backgroundColor: const Color.fromARGB(
+                              255,
+                              51,
+                              48,
+                              48,
+                            ),
                             foregroundColor: Colors.white,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
@@ -159,7 +173,10 @@ class ShopScreen extends StatelessWidget {
                               ..hideCurrentSnackBar()
                               ..showSnackBar(snackBar);
                           },
-                          child: const Text('Add to Cart', style: TextStyle(fontSize: 11)),
+                          child: const Text(
+                            'Add to Cart',
+                            style: TextStyle(fontSize: 11),
+                          ),
                         ),
                       ),
                     ),
