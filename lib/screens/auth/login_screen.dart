@@ -16,7 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _isLoading = false;
 
   // Gawin nating dummy credentials para makapasok ka (pwedeng palitan)
-  final String username = ""; 
+  final String username = "";
   final String password = "";
 
   void login() async {
@@ -46,7 +46,8 @@ class _LoginScreenState extends State<LoginScreen> {
           backgroundColor: Colors.transparent,
           content: AwesomeSnackbarContent(
             title: 'Wait!',
-            message: 'Something went wrong. Please check your email and password.',
+            message:
+                'Something went wrong. Please check your email and password.',
             contentType: ContentType.failure,
           ),
         );
@@ -63,19 +64,16 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          // 1. BACKGROUND IMAGE
           Container(
             width: double.infinity,
             height: double.infinity,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('logo.png'), // Consistent sa ibang screens
+                image: AssetImage('logo.png'),
                 fit: BoxFit.cover,
               ),
             ),
-            child: Container(
-              color: Colors.black.withOpacity(0.8), // Dark overlay para litaw ang inputs
-            ),
+            child: Container(color: Colors.black.withOpacity(0.8)),
           ),
 
           // 2. LOGIN FORM
@@ -107,13 +105,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintStyle: const TextStyle(color: Colors.white38),
                         fillColor: Colors.white.withOpacity(0.08),
                         filled: true,
-                        prefixIcon: const Icon(Icons.person_outline, color: Colors.white70),
+                        prefixIcon: const Icon(
+                          Icons.person_outline,
+                          color: Colors.white70,
+                        ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(color: Colors.white10),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Color.fromARGB(255, 61, 59, 58)),
+                          borderSide: const BorderSide(
+                            color: Color.fromARGB(255, 61, 59, 58),
+                          ),
                           borderRadius: BorderRadius.circular(15),
                         ),
                       ),
@@ -130,13 +133,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         hintStyle: const TextStyle(color: Colors.white38),
                         fillColor: Colors.white.withOpacity(0.08),
                         filled: true,
-                        prefixIcon: const Icon(Icons.lock_outline, color: Colors.white70),
+                        prefixIcon: const Icon(
+                          Icons.lock_outline,
+                          color: Colors.white70,
+                        ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(color: Colors.white10),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Color.fromARGB(255, 53, 49, 49)),
+                          borderSide: const BorderSide(
+                            color: Color.fromARGB(255, 53, 49, 49),
+                          ),
                           borderRadius: BorderRadius.circular(15),
                         ),
                       ),
@@ -149,7 +157,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: ElevatedButton(
                         onPressed: _isLoading ? null : login,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromARGB(255, 39, 32, 32),
+                          backgroundColor: const Color.fromARGB(
+                            255,
+                            39,
+                            32,
+                            32,
+                          ),
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(vertical: 18),
                           shape: RoundedRectangleBorder(
@@ -168,7 +181,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               )
                             : const Text(
                                 'Sign In',
-                                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                       ),
                     ),
@@ -179,7 +195,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (_) => const SignupScreen()),
+                          MaterialPageRoute(
+                            builder: (_) => const SignupScreen(),
+                          ),
                         );
                       },
                       child: RichText(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 // Gagamit tayo ng relative path para hindi malito si Flutter
-import 'login_screen.dart'; 
+import 'login_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -18,7 +18,11 @@ class _SignupScreenState extends State<SignupScreen> {
 
   void handleSignup() async {
     if (_emailController.text.isEmpty || _passwordController.text.isEmpty) {
-      _showSnackBar('Ka-Basic!', 'Please fill in all the details.', ContentType.warning);
+      _showSnackBar(
+        'Something went Wrong',
+        'Please fill in all the details.',
+        ContentType.warning,
+      );
       return;
     }
 
@@ -33,7 +37,7 @@ class _SignupScreenState extends State<SignupScreen> {
     if (!mounted) return;
     setState(() => _isLoading = false);
 
-    Navigator.pop(context); 
+    Navigator.pop(context);
   }
 
   void _showSnackBar(String title, String message, ContentType type) {
@@ -47,7 +51,9 @@ class _SignupScreenState extends State<SignupScreen> {
         contentType: type,
       ),
     );
-    ScaffoldMessenger.of(context)..hideCurrentSnackBar()..showSnackBar(snackBar);
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(snackBar);
   }
 
   @override
@@ -60,10 +66,7 @@ class _SignupScreenState extends State<SignupScreen> {
             width: double.infinity,
             height: double.infinity,
             decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/4background.jpg'),
-                fit: BoxFit.cover,
-              ),
+              image: DecorationImage(image: AssetImage(''), fit: BoxFit.cover),
             ),
             child: Container(color: Colors.black.withOpacity(0.85)),
           ),
@@ -76,15 +79,32 @@ class _SignupScreenState extends State<SignupScreen> {
                   children: [
                     const SizedBox(height: 60),
                     Image.asset('ysl.png', width: 140),
-                    const Text("Start your journey with us!", style: TextStyle(color: Colors.white54, fontSize: 14)),
+                    const Text(
+                      "Start your journey with us!",
+                      style: TextStyle(color: Colors.white54, fontSize: 14),
+                    ),
                     const SizedBox(height: 40),
 
-                    _buildField(_emailController, 'Email Address', Icons.email_outlined),
+                    _buildField(
+                      _emailController,
+                      'Email Address',
+                      Icons.email_outlined,
+                    ),
                     const SizedBox(height: 15),
-                    _buildField(_passwordController, 'Password', Icons.lock_outline, isPass: true),
+                    _buildField(
+                      _passwordController,
+                      'Password',
+                      Icons.lock_outline,
+                      isPass: true,
+                    ),
                     const SizedBox(height: 15),
-                    _buildField(_confirmPasswordController, 'Confirm Password', Icons.lock_reset_outlined, isPass: true),
-                    
+                    _buildField(
+                      _confirmPasswordController,
+                      'Confirm Password',
+                      Icons.lock_reset_outlined,
+                      isPass: true,
+                    ),
+
                     const SizedBox(height: 30),
 
                     SizedBox(
@@ -92,25 +112,43 @@ class _SignupScreenState extends State<SignupScreen> {
                       child: ElevatedButton(
                         onPressed: _isLoading ? null : handleSignup,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromARGB(255, 54, 41, 40),
+                          backgroundColor: const Color.fromARGB(
+                            255,
+                            54,
+                            41,
+                            40,
+                          ),
                           foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(vertical: 18),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
                         ),
-                        child: _isLoading 
-                          ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
-                          : const Text('Sign Up', style: TextStyle(fontWeight: FontWeight.bold)),
+                        child: _isLoading
+                            ? const SizedBox(
+                                width: 20,
+                                height: 20,
+                                child: CircularProgressIndicator(
+                                  color: Colors.white,
+                                  strokeWidth: 2,
+                                ),
+                              )
+                            : const Text(
+                                'Sign Up',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                       ),
                     ),
 
                     const SizedBox(height: 25),
 
-                    // SIGN IN LINK
                     GestureDetector(
                       onTap: () {
                         Navigator.pushReplacement(
-                          context, 
-                          MaterialPageRoute(builder: (context) => const LoginScreen())
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginScreen(),
+                          ),
                         );
                       },
                       child: RichText(
@@ -120,7 +158,11 @@ class _SignupScreenState extends State<SignupScreen> {
                           children: [
                             TextSpan(
                               text: 'Sign In',
-                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, decoration: TextDecoration.underline),
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                decoration: TextDecoration.underline,
+                              ),
                             ),
                           ],
                         ),
@@ -137,7 +179,12 @@ class _SignupScreenState extends State<SignupScreen> {
     );
   }
 
-  Widget _buildField(TextEditingController controller, String hint, IconData icon, {bool isPass = false}) {
+  Widget _buildField(
+    TextEditingController controller,
+    String hint,
+    IconData icon, {
+    bool isPass = false,
+  }) {
     return TextField(
       controller: controller,
       obscureText: isPass,
@@ -148,8 +195,14 @@ class _SignupScreenState extends State<SignupScreen> {
         fillColor: Colors.white.withOpacity(0.08),
         filled: true,
         prefixIcon: Icon(icon, color: Colors.white70),
-        enabledBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.white10), borderRadius: BorderRadius.circular(15)),
-        focusedBorder: OutlineInputBorder(borderSide: const BorderSide(color: Color.fromARGB(255, 46, 36, 35)), borderRadius: BorderRadius.circular(15)),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.white10),
+          borderRadius: BorderRadius.circular(15),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Color.fromARGB(255, 46, 36, 35)),
+          borderRadius: BorderRadius.circular(15),
+        ),
       ),
     );
   }

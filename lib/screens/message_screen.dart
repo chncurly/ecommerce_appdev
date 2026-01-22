@@ -5,17 +5,16 @@ class MessageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final List<Map<String, String>> fakeMessages = [
       {
         "sender": "Christian John G. Arnidoval",
         "message": "Im Very Satisfied on the product",
-        "time": "Just now"
+        "time": "Just now",
       },
       {
         "sender": "Gienella G. Dizon",
         "message": "Is Ysl Shoes Size 37 are Available?",
-        "time": "2h ago"
+        "time": "2h ago",
       },
     ];
 
@@ -28,18 +27,14 @@ class MessageScreen extends StatelessWidget {
       ),
       body: Stack(
         children: [
-
           Container(
             width: double.infinity,
             height: double.infinity,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('ysl5.png'), 
+                image: AssetImage('ysl5.png'),
                 fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                  Colors.black87,
-                  BlendMode.darken,
-                ),
+                colorFilter: ColorFilter.mode(Colors.black87, BlendMode.darken),
               ),
             ),
           ),
@@ -58,9 +53,12 @@ class MessageScreen extends StatelessWidget {
                   border: Border.all(color: Colors.white.withOpacity(0.1)),
                 ),
                 child: ListTile(
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 15,
+                    vertical: 8,
+                  ),
                   leading: const CircleAvatar(
-                    backgroundColor: Color.fromARGB(255, 232, 41, 28),
+                    backgroundColor: Color.fromARGB(255, 53, 44, 43),
                     child: Icon(Icons.person, color: Colors.white),
                   ),
                   title: Row(
@@ -69,14 +67,17 @@ class MessageScreen extends StatelessWidget {
                       Text(
                         msg['sender']!,
                         style: const TextStyle(
-                          color: Colors.white, 
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 15
+                          fontSize: 15,
                         ),
                       ),
                       Text(
                         msg['time']!,
-                        style: const TextStyle(color: Colors.white38, fontSize: 11),
+                        style: const TextStyle(
+                          color: Colors.white38,
+                          fontSize: 11,
+                        ),
                       ),
                     ],
                   ),
@@ -86,27 +87,22 @@ class MessageScreen extends StatelessWidget {
                       msg['message']!,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(color: Colors.white70, fontSize: 13),
+                      style: const TextStyle(
+                        color: Colors.white70,
+                        fontSize: 13,
+                      ),
                     ),
                   ),
-                  onTap: () {
-                  },
+                  onTap: () {},
                 ),
               );
             },
           ),
-          
-  
+
           Positioned(
             bottom: 30,
             right: -20,
-            child: Opacity(
-              opacity: 0.1,
-              child: Image.asset(
-                'assets/images/pns.png',
-                width: 150,
-              ),
-            ),
+            child: Opacity(opacity: 0.1, child: Image.asset('', width: 150)),
           ),
         ],
       ),
