@@ -48,6 +48,7 @@ class ShopScreen extends StatelessWidget {
             ),
           ),
         ),
+
         actions: [
           Stack(
             children: [

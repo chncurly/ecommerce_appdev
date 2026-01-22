@@ -3,9 +3,7 @@ import 'package:ecommerce/screens/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
 void main() {
-  
   runApp(
     ChangeNotifierProvider(
       create: (_) => CartProvider(),
@@ -24,10 +22,9 @@ class MainApp extends StatelessWidget {
       title: 'Ysl',
       theme: ThemeData(
         useMaterial3: true,
-       
-        primaryColor: const Color.fromARGB(255, 35, 32, 32)
-      
-        ),
+
+        primaryColor: const Color.fromARGB(255, 35, 32, 32),
+      ),
       home: LoginScreen(),
     );
   }

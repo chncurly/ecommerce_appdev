@@ -113,21 +113,20 @@ class ShopScreen extends StatelessWidget {
                 ),
                 onPressed: () {
                   cart.addToCart(product);
-                 const snackBar = SnackBar(
-                  elevation: 0,
-                  behavior: SnackBarBehavior.floating,
-                  backgroundColor: Colors.transparent,
-                  content: AwesomeSnackbarContent(
-                    title: 'Done!',
-                    message:
-                        'Your order is now added',
-                    contentType: ContentType.failure,
-                  ),
-                );
+                  const snackBar = SnackBar(
+                    elevation: 0,
+                    behavior: SnackBarBehavior.floating,
+                    backgroundColor: Colors.transparent,
+                    content: AwesomeSnackbarContent(
+                      title: 'Done!',
+                      message: 'Your order is now added',
+                      contentType: ContentType.failure,
+                    ),
+                  );
 
-                ScaffoldMessenger.of(context)
-                  ..hideCurrentSnackBar()
-                  ..showSnackBar(snackBar);
+                  ScaffoldMessenger.of(context)
+                    ..hideCurrentSnackBar()
+                    ..showSnackBar(snackBar);
                 },
 
                 child: Text('Add'),

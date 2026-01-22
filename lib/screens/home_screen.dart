@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<CartProvider>(context);
-    
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 35, 32, 32),
       appBar: AppBar(
@@ -58,13 +58,12 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Stack(
         children: [
-  
           Container(
             width: double.infinity,
             height: double.infinity,
             decoration: const BoxDecoration(
-              image: DecorationImage(      
-                image: AssetImage('plain.png'), 
+              image: DecorationImage(
+                image: AssetImage('plain.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -74,10 +73,7 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  'ysl.png', 
-                  width: 300,
-                ),
+                Image.asset('ysl.png', width: 300),
                 const SizedBox(height: 20),
               ],
             ),

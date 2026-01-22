@@ -15,9 +15,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordController = TextEditingController();
   bool _isLoading = false;
 
-  // Gawin nating dummy credentials para makapasok ka (pwedeng palitan)
-  final String username = "";
-  final String password = "";
+  final String username = "admin";
+  final String password = "123";
 
   void login() async {
     setState(() {
@@ -76,7 +75,6 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Container(color: Colors.black.withOpacity(0.8)),
           ),
 
-          // 2. LOGIN FORM
           Center(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -84,7 +82,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // LOGO
                     Image.asset('ysl.png', width: 150),
                     const Text(
                       'Suit anything on you',
@@ -96,10 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 50),
 
-                    // EMAIL TEXTFIELD (Transparent/Glass style)
                     TextField(
-                      textInputAction: TextInputAction.done,
-                      onSubmitted: (_) => login,
                       controller: _usernameController,
                       style: const TextStyle(color: Colors.white),
                       decoration: InputDecoration(
@@ -125,8 +119,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 15),
 
-                    // PASSWORD TEXTFIELD
                     TextField(
+                      textInputAction: TextInputAction.done,
+                      onSubmitted: (_) => login,
                       controller: _passwordController,
                       obscureText: true,
                       style: const TextStyle(color: Colors.white),
@@ -153,7 +148,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 30),
 
-                    // SIGN IN BUTTON
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
@@ -192,7 +186,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 25),
 
-                    // SIGN UP LINK
                     GestureDetector(
                       onTap: () {
                         Navigator.push(

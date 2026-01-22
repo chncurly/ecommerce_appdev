@@ -61,7 +61,6 @@ class _SignupScreenState extends State<SignupScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          // BACKGROUND LAYER
           Container(
             width: double.infinity,
             height: double.infinity,
