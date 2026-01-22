@@ -98,6 +98,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     // EMAIL TEXTFIELD (Transparent/Glass style)
                     TextField(
+                      textInputAction: TextInputAction.done,
+                      onSubmitted: (_) => login,
                       controller: _usernameController,
                       style: const TextStyle(color: Colors.white),
                       decoration: InputDecoration(
