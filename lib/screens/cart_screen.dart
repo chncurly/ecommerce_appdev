@@ -162,7 +162,7 @@ class CartScreen extends StatelessWidget {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 232, 41, 28),
+                  backgroundColor: const Color.fromARGB(255, 104, 86, 85),
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 35,
@@ -219,7 +219,7 @@ class CartScreen extends StatelessWidget {
             child: const Text(
               'OK',
               style: TextStyle(
-                color: Color.fromARGB(255, 232, 41, 28),
+                color: Color.fromARGB(255, 102, 80, 79),
                 fontWeight: FontWeight.bold,
               ),
             ),

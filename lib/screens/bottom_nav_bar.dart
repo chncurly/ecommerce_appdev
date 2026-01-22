@@ -59,7 +59,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
               icon: Icon(Icons.shopping_bag),
               label: 'Shop',
             ),
-            BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Story'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.book),
+              label: 'Notification',
+            ),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
           ],
         ),
